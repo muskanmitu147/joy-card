@@ -1,0 +1,214 @@
+/* =========================
+   Premium Glass UI
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#020617);
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563eb55,transparent 40%),
+    radial-gradient(circle at bottom right,#06b6d455,transparent 40%),
+    radial-gradient(circle at center,#9333ea33,transparent 45%);
+    animation:bgMove 10s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes bgMove{
+    0%{
+        transform:scale(1);
+    }
+
+    100%{
+        transform:scale(1.15);
+    }
+}
+
+/* Card */
+
+.card{
+    width:380px;
+    max-width:95%;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    text-align:center;
+    animation:cardShow .8s ease;
+}
+
+@keyframes cardShow{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Avatar */
+
+.avatar{
+    width:120px;
+    height:120px;
+    margin:auto;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    color:white;
+    background:linear-gradient(135deg,#3b82f6,#9333ea);
+    box-shadow:0 10px 25px rgba(59,130,246,.45);
+    margin-bottom:20px;
+}
+
+/* Text */
+
+h1{
+    color:#fff;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#38bdf8;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.profile p{
+    color:#d1d5db;
+    margin-bottom:25px;
+}
+
+/* Buttons */
+
+.buttons{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.btn{
+    position:relative;
+    overflow:hidden;
+    padding:15px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:16px;
+    background:#2563eb;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#1d4ed8;
+    box-shadow:0 8px 20px rgba(37,99,235,.45);
+}
+
+/* Information */
+
+.info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.item{
+    background:rgba(255,255,255,.06);
+    padding:18px;
+    border-radius:12px;
+    color:#f8fafc;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.item i{
+    margin-right:8px;
+    color:#38bdf8;
+}
+
+/* Footer */
+
+footer{
+    margin-top:30px;
+    font-size:14px;
+    color:#94a3b8;
+}
+
+/* Ripple Effect */
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    background:rgba(255,255,255,.5);
+    animation:ripple .6s linear;
+    pointer-events:none;
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.card{
+    padding:25px;
+}
+
+.avatar{
+    width:95px;
+    height:95px;
+    font-size:45px;
+}
+
+h1{
+    font-size:22px;
+}
+
+h2{
+    font-size:18px;
+}
+
+.btn{
+    font-size:15px;
+}
+
+}
